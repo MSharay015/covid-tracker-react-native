@@ -55,7 +55,9 @@ references:
   # Branch filter
   master_filter: &master_filter
     branches:
-      only: master
+      only: 
+        - master
+        - fixes/post-eject-ios
 
   develop_filter: &develop_filter
     branches:
@@ -67,6 +69,7 @@ references:
       only:
         - master
         - develop
+        - fixes/post-eject-ios
 
   feature_filter: &feature_filter
     branches:
