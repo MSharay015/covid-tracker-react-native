@@ -26,7 +26,7 @@ export interface IPatientService {
 
 @injectable()
 export class PatientService extends ApiClientBase implements IPatientService {
-  // Use accessor to get around circularing dependency
+  // Use accessor to get around circular dependency
   private get consentService(): IConsentService {
     return container.get<IConsentService>(Services.Consent);
   }
@@ -163,7 +163,7 @@ export class PatientService extends ApiClientBase implements IPatientService {
     const hasBloodGroupAnswer = patient.blood_group != null;
     const isNHSStudy = patient.is_in_uk_nhs_asymptomatic_study;
     const hasSchoolGroup = patient.has_school_group;
-
+    const shouldAskVaccineTrial = patient.should_ask_vaccine_trial;
     const isMinor = isMinorAge(patient.year_of_birth);
 
     return {
@@ -188,6 +188,7 @@ export class PatientService extends ApiClientBase implements IPatientService {
       isNHSStudy,
       hasSchoolGroup,
       isMinor,
+      shouldAskVaccineTrial,
     };
   }
 

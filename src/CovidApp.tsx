@@ -21,6 +21,7 @@ import HealthWorkerExposureScreen from '@covid/features/assessment/HealthWorkerE
 import ProfileBackDateScreen from '@covid/features/assessment/ProfileBackDateScreen';
 import TreatmentOtherScreen from '@covid/features/assessment/TreatmentOtherScreen';
 import TreatmentSelectionScreen from '@covid/features/assessment/TreatmentSelectionScreen';
+import { VaccineTrialScreen } from '@covid/features/assessment/VaccineTrialScreen';
 import WhereAreYouScreen from '@covid/features/assessment/WhereAreYouScreen';
 import CovidTestListScreen from '@covid/features/covid-tests/CovidTestListScreen';
 import { LoginScreen } from '@covid/features/login/LoginScreen';
@@ -97,8 +98,7 @@ import { GutStomachSymptomsScreen } from '@covid/features/assessment/GutStomachS
 import { OtherSymptomsScreen } from '@covid/features/assessment/OtherSymptomsScreen';
 import { SchoolNetworkInfoScreen } from '@covid/features/school-network/SchoolNetworkInfo';
 import { MainNavigator } from '@covid/routes';
-
-import { SearchLADScreen } from './features/dashboard/SearchLADScreen';
+import { SearchLADScreen } from '@covid/features';
 // __HYGEN_INJECTED_IMPORTS_ABOVE__
 
 const Stack = createStackNavigator<ScreenParamList>();
@@ -266,6 +266,7 @@ export default class CovidApp extends Component<object, State> {
         <Stack.Screen name="SchoolDashboard" component={SchoolDashboardScreen} options={noHeader} />
         <Stack.Screen name="ConfirmSchool" component={ConfirmSchoolScreen} options={noHeader} />
         <Stack.Screen name="JoinHigherEducation" component={JoinHigherEducationScreen} options={noHeader} />
+        <Stack.Screen name="VaccineTrial" component={VaccineTrialScreen} options={noHeader} />
 
         {/* __HYGEN_INJECTED_SCREEN_BELOW__ */}
         <Stack.Screen name="Trendline" component={TrendlineScreen} options={noHeader} />
